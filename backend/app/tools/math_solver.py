@@ -3,12 +3,12 @@ from sympy.parsing.sympy_parser import (
     parse_expr, 
     standard_transformations, 
     implicit_multiplication_application,
-    convert_xor  # <--- This is the fix
+    convert_xor  
 )
 
 class MathTool:
     def __init__(self):
-        # Add convert_xor to the transformations so "x^2" becomes "x**2"
+      
         self.transformations = (
             standard_transformations + 
             (implicit_multiplication_application, convert_xor)

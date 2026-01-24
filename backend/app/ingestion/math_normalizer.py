@@ -1,5 +1,3 @@
-# backend/app/ingestion/math_normalizer.py
-
 import re
 
 

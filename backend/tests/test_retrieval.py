@@ -24,8 +24,7 @@ def test_embedder_output():
 def test_store_save_load_search(setup_teardown):
     dim = 384
     store = VectorStore(dimension=dim, index_dir=TEST_INDEX_DIR)
-    
-    # Fake data
+  
     vecs = np.random.rand(2, dim).astype('float32')
     docs = [{"id": 1, "text": "A"}, {"id": 2, "text": "B"}]
     

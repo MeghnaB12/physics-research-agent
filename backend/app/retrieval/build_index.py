@@ -1,33 +1,3 @@
-# import json
-# from retrieval.embedder import Embedder
-# from retrieval.vector_store import VectorStore
-
-# CHUNKS_PATH = "data/processed/paper1/chunks.json"
-# INDEX_PATH = "data/processed/paper1/index.faiss"
-
-
-# def build_index():
-#     with open(CHUNKS_PATH) as f:
-#         chunks = json.load(f)
-
-#     texts = [c["text"] for c in chunks]
-
-#     embedder = Embedder()
-#     embeddings = embedder.embed_texts(texts)
-
-#     store = VectorStore(dim=embeddings.shape[1], index_path=INDEX_PATH)
-#     store.add(
-#         embeddings,
-#         metadata=chunks
-#     )
-#     store.save()
-
-#     print(f"✅ Indexed {len(chunks)} chunks")
-
-
-# if __name__ == "__main__":
-#     build_index()
-
 
 import json
 import os

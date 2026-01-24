@@ -1,20 +1,3 @@
-# # backend/app/ingestion/math_classifier.py
-
-# import re
-
-
-# def is_math_heavy(text: str) -> bool:
-#     symbols = re.findall(r"[=<>±√µθ∂Σ∫]", text)
-#     equations = text.count("=")
-
-#     if equations >= 2:
-#         return True
-
-#     if len(symbols) > 10:
-#         return True
-
-#     return False
-
 import re
 
 def is_math_heavy(text: str, threshold: float = 0.15) -> bool:
@@ -24,11 +7,8 @@ def is_math_heavy(text: str, threshold: float = 0.15) -> bool:
     if not text:
         return False
 
-    # 1. LaTeX patterns (e.g., $...$, \[...\], \frac)
     latex_patterns = r"(\$.*?\$|\\\[.*?\\\]|\\[a-zA-Z]+)"
     
-    # 2. Common Unicode Math Symbols found in PDF extracts
-    # ∑, ∫, ∂, √, Δ, ∇, ∈, ∉, ⊂, ⊃, ∪, ∩, ≤, ≥, ≠, ≈, ≡, ±, ∞, →, ⇒, ⇔, ∥
     unicode_math = r"[∑∫∂√Δ∇∈∉⊂⊃∪∩≤≥≠≈≡±∞→⇒⇔∥πµσθΩλβγ]"
 
     # Calculate length matches

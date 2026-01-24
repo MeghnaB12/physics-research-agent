@@ -1,5 +1,3 @@
-# backend/app/ingestion/citation_extractor.py
-
 import re
 
 

@@ -2,7 +2,7 @@ from retrieval.retriever import Retriever
 
 class SearchTool:
     def __init__(self):
-        # Initialize the retriever we built in Week 3
+        
         self.retriever = Retriever()
 
     def search(self, query: str):

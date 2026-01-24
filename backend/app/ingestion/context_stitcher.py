@@ -1,23 +1,3 @@
-# # backend/app/ingestion/context_stitcher.py
-
-# from typing import List, Dict
-
-
-# def stitch_context(chunks: List[Dict], window=1):
-#     stitched = []
-
-#     for i, chunk in enumerate(chunks):
-#         context = ""
-
-#         for j in range(max(0, i - window), min(len(chunks), i + window + 1)):
-#             if j != i:
-#                 context += chunks[j]["text"] + " "
-
-#         chunk["context"] = context.strip()
-#         stitched.append(chunk)
-
-#     return stitched
-
 from typing import List, Dict, Optional
 
 def stitch_context(chunks: List[Dict], window_size: int = 1) -> List[Dict]:

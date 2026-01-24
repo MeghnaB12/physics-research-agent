@@ -1,24 +1,3 @@
-# # backend/app/ingestion/section_detector.py
-
-# import re
-
-# SECTION_PATTERNS = [
-#     r"^\d+\.\s+[A-Z]",          # 1. Introduction
-#     r"^Section\s+\d+",          # Section 2
-#     r"^Theorem\s+\d+",
-#     r"^Lemma\s+\d+",
-#     r"^Proposition\s+\d+",
-#     r"^Definition\s+\d+",
-#     r"^Remark\s+\d+",
-#     r"^Proof",
-# ]
-
-
-# def detect_section(text: str) -> str | None:
-#     for pattern in SECTION_PATTERNS:
-#         if re.search(pattern, text):
-#             return re.findall(pattern, text)[0]
-#     return None
 
 import re
 
