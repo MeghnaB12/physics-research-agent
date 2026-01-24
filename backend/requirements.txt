@@ -1,0 +1,14 @@
+pdfplumber
+pymupdf
+pdf2image
+pillow
+tqdm
+nltk
+pytest
+numpy
+sentence-transformers
+faiss-cpu
+google-generativeai
+python-dotenv
+sympy
+streamlit

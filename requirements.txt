@@ -1,0 +1,10 @@
+faiss-cpu==1.13.2
+google-generativeai==0.8.6
+nltk==3.9.2
+numpy==2.2.6
+pdf2image==1.17.0
+pytest==9.0.2
+python-dotenv==1.2.1
+sentence-transformers==5.1.2
+streamlit==1.51.0
+sympy==1.14.0

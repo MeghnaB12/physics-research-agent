@@ -1,0 +1,24 @@
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.pytest_cache/
+
+# Environment Variables (CRITICAL: Protects your API Key)
+.env
+
+# MacOS junk
+.DS_Store
+
+# Generated Data (Don't push the vector store, it's large and re-creatable)
+data/processed/
+data/indices/
+data/test_indices/
+
+# Optional: You might want to keep data/raw/ if the PDF is small.
+# If the PDF is huge, uncomment the line below:
+# data/raw/
