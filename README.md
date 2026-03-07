@@ -41,3 +41,33 @@ The agent operates across three specialized layers:
    ```bash
    git clone [https://github.com/MeghnaB12/physics-research-agent.git](https://github.com/MeghnaB12/physics-research-agent.git)
    cd physics-research-agent
+   ~~~
+
+   Install Dependencies
+Bash
+pip install -r requirements.txt
+Set up Environment Variables
+Create a .env file in the root directory and add your Google Gemini API key:
+Bash
+GOOGLE_API_KEY=your_actual_api_key_here
+🏃‍♂️ How to Run
+1. Ingest Data (Build the Knowledge Base)
+Processes the raw PDF, cleans the text, and chunks it with rich metadata.
+
+Bash
+PYTHONPATH=backend/app python backend/app/main.py
+2. Build the Vector Index
+Embeds the chunks and constructs the FAISS index for high-speed retrieval.
+
+Bash
+PYTHONPATH=backend/app python backend/app/retrieval/build_index.py
+3. Launch the Application
+Starts the interactive Streamlit chat interface.
+
+Bash
+PYTHONPATH=backend/app streamlit run frontend/app.py
+🧪 Testing
+The system includes a robust test suite covering the ingestion logic, vector retrieval, and tool execution.
+
+Bash
+PYTHONPATH=backend/app pytest backend/tests
