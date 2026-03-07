@@ -39,7 +39,7 @@ The agent operates across three specialized layers:
 
 1. **Clone the repository**
    ```bash
-   git clone [https://github.com/MeghnaB12/physics-research-agent.git](https://github.com/MeghnaB12/physics-research-agent.git)
+   git clone https://github.com/MeghnaB12/physics-research-agent.git
    cd physics-research-agent
     ```
 2. **Install Dependencies**
