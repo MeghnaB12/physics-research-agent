@@ -57,28 +57,31 @@ The agent operates across three specialized layers:
 ## 🏃‍♂️ How to Run
 
 1. **Ingest Data (Build the Knowledge Base)**
-Processes the raw PDF, cleans the text, and chunks it with rich metadata.
+   
+    Processes the raw PDF, cleans the text, and chunks it with rich metadata.
 
-```bash
-PYTHONPATH=backend/app python backend/app/main.py
-```
+    ```bash
+    PYTHONPATH=backend/app python backend/app/main.py
+    ```
 
 2. **Build the Vector Index**
-Embeds the chunks and constructs the FAISS index for high-speed retrieval.
+   
+    Embeds the chunks and constructs the FAISS index for high-speed retrieval.
 
-```bash
-PYTHONPATH=backend/app python backend/app/retrieval/build_index.py
-```
+    ```bash
+    PYTHONPATH=backend/app python backend/app/retrieval/build_index.py
+    ```
 3. **Launch the Application**
-Starts the interactive Streamlit chat interface.
-
-```bash
-PYTHONPATH=backend/app streamlit run frontend/app.py
-```
+   
+    Starts the interactive Streamlit chat interface.
+  
+    ```bash
+    PYTHONPATH=backend/app streamlit run frontend/app.py
+    ```
 
 ## 🧪 Testing
-The system includes a robust test suite covering the ingestion logic, vector retrieval, and tool execution.
+  The system includes a robust test suite covering the ingestion logic, vector retrieval, and tool execution.
 
-```bash
-PYTHONPATH=backend/app pytest backend/tests
-```
+  ```bash
+  PYTHONPATH=backend/app pytest backend/tests
+  ```
