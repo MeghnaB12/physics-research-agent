@@ -41,11 +41,11 @@ The agent operates across three specialized layers:
    ```bash
    git clone [https://github.com/MeghnaB12/physics-research-agent.git](https://github.com/MeghnaB12/physics-research-agent.git)
    cd physics-research-agent
-   ~~~
-
-   Install Dependencies
-Bash
-pip install -r requirements.txt
+    ```
+2. **Install Dependencies**
+   ```bash
+    pip install -r requirements.txt
+    ```
 Set up Environment Variables
 Create a .env file in the root directory and add your Google Gemini API key:
 Bash
