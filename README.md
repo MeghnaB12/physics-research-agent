@@ -14,7 +14,7 @@ Standard LLM pipelines often hallucinate when faced with complex physics equatio
 * **Physics-Aware Ingestion Pipeline:** Custom ETL logic (`SectionTracker`, `MathClassifier`) that processes mathematical PDFs, preserving equation integrity and logical document structure (e.g., Introduction, Methodology) during chunking.
 * **Autonomous Tool-Use Agent:** A "Router-Retriever-Solver" architecture. The agent intelligently analyzes a user query and decides whether to *search* the vector database for conceptual answers or *write and execute code* to solve a math problem.
 * **Symbolic Math Engine:** Integrates `SymPy` as a deterministic tool. When the agent identifies an equation in the text, it offloads the calculation to the symbolic solver, guaranteeing 100% arithmetic precision and eliminating LLM hallucination.
-* **Citation-Backed Responses:** Conceptual answers are strictly grounded in retrieved PDF chunks, providing explicit traceability (e.g., `[Result 1, 3]`).
+* **Citation-Backed Responses:** Conceptual answers are strictly grounded in retrieved PDF chunks, providing explicit traceability.
 
 ## 🛠️ Tech Stack
 
