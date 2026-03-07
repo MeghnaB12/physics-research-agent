@@ -48,11 +48,11 @@ The agent operates across three specialized layers:
     ```
 3. **Set up Environment Variables**
 
-  Create a .env file in the root directory and add your Google Gemini API key:
+    Create a .env file in the root directory and add your Google Gemini API key:
 
-  ```bash
-  GOOGLE_API_KEY=your_actual_api_key_here
-  ```
+    ```bash
+    GOOGLE_API_KEY=your_actual_api_key_here
+    ```
 
 ## 🏃‍♂️ How to Run
 
