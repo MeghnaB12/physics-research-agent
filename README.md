@@ -1,7 +1,7 @@
 # ⚛️ Physics-Informed Research Agent
 
 ![Python](https://img.shields.io/badge/Python-3.13-blue.svg)
-![Gemini](https://img.shields.io/badge/Gemini-1.5_Flash-orange.svg)
+![Gemini](https://img.shields.io/badge/Gemini-2.5_Flash-orange.svg)
 ![FAISS](https://img.shields.io/badge/FAISS-Vector_Search-green.svg)
 ![Streamlit](https://img.shields.io/badge/Streamlit-UI-red.svg)
 
