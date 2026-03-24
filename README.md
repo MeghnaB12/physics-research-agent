@@ -18,7 +18,7 @@ Standard LLM pipelines often hallucinate when faced with complex physics equatio
 
 ## 🛠️ Tech Stack
 
-* **LLM & Orchestration:** Google Gemini 1.5 Flash, Native Function Calling
+* **LLM & Orchestration:** Google Gemini 2.5 Flash, Native Function Calling
 * **Retrieval (RAG):** FAISS (Facebook AI Similarity Search), Sentence-Transformers (`all-MiniLM-L6-v2`)
 * **Data Processing:** `pdf2image`, NLTK, sliding-window semantic chunking
 * **Math Engine:** SymPy, LaTeX parsing transformations
