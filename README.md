@@ -61,7 +61,7 @@ The agent operates across three specialized layers:
     Processes the raw PDF, cleans the text, and chunks it with rich metadata.
 
     ```bash
-    PYTHONPATH=backend/app python backend/app/main.py
+    python backend/app/main.py
     ```
 
 2. **Build the Vector Index**
@@ -69,19 +69,19 @@ The agent operates across three specialized layers:
     Embeds the chunks and constructs the FAISS index for high-speed retrieval.
 
     ```bash
-    PYTHONPATH=backend/app python backend/app/retrieval/build_index.py
+    python backend/app/retrieval/build_index.py
     ```
 3. **Launch the Application**
    
     Starts the interactive Streamlit chat interface.
   
     ```bash
-    PYTHONPATH=backend/app streamlit run frontend/app.py
+    streamlit run frontend/app.py
     ```
 
 ## 🧪 Testing
   The system includes a robust test suite covering the ingestion logic, vector retrieval, and tool execution.
 
   ```bash
-  PYTHONPATH=backend/app pytest backend/tests
+  pytest backend/tests
   ```
