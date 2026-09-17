@@ -5,16 +5,16 @@
 ![FAISS](https://img.shields.io/badge/FAISS-Vector_Search-green.svg)
 ![Streamlit](https://img.shields.io/badge/Streamlit-UI-red.svg)
 
-A **Multi-Modal RAG (Retrieval-Augmented Generation) System** engineered to handle the mathematical density of scientific literature. 
+A **Multi-Modal RAG (Retrieval-Augmented Generation) System** engineered to handle the mathematical density of scientific literature.
 
-Standard LLM pipelines often hallucinate when faced with complex physics equations or deep technical context. This project bridges the gap between data science and the physical sciences by deploying an autonomous agent that can **read** scientific papers, **extract** context, and **deterministically solve** embedded mathematical equations.
+Standard LLM pipelines can be unreliable when faced with dense physics notation or long technical context. This project combines document retrieval with symbolic tooling so the agent can **read** scientific papers, **extract** relevant context, and route supported mathematical expressions to a deterministic solver.
 
 ## 🚀 Key Features
 
 * **Physics-Aware Ingestion Pipeline:** Custom ETL logic (`SectionTracker`, `MathClassifier`) that processes mathematical PDFs, preserving equation integrity and logical document structure (e.g., Introduction, Methodology) during chunking.
-* **Autonomous Tool-Use Agent:** A "Router-Retriever-Solver" architecture. The agent intelligently analyzes a user query and decides whether to *search* the vector database for conceptual answers or *write and execute code* to solve a math problem.
-* **Symbolic Math Engine:** Integrates `SymPy` as a deterministic tool. When the agent identifies an equation in the text, it offloads the calculation to the symbolic solver, guaranteeing 100% arithmetic precision and eliminating LLM hallucination.
-* **Citation-Backed Responses:** Conceptual answers are strictly grounded in retrieved PDF chunks, providing explicit traceability.
+* **Autonomous Tool-Use Agent:** A "Router-Retriever-Solver" architecture. The agent analyzes a user query and decides whether to *search* the vector database for conceptual answers or use the math tool for a supported calculation.
+* **Symbolic Math Engine:** Integrates `SymPy` for deterministic symbolic computation on supported expressions, reducing reliance on LLM-generated arithmetic. Solver correctness still depends on the expression being parsed and represented correctly.
+* **Citation-Backed Responses:** Conceptual answers are grounded in retrieved PDF chunks, providing explicit traceability to source context.
 
 ## 🛠️ Tech Stack
 
@@ -31,9 +31,9 @@ The agent operates across three specialized layers:
 
 1. **Ingestion Layer:** Converts PDFs to raw text, applies noise-reduction filters, and splits text using context-preserving overlapping windows. Chunks are enriched with metadata regarding their source section and mathematical density.
 2. **Retrieval Layer:** Projects text into a 384-dimensional dense vector space. User queries perform a k-Nearest Neighbors (k-NN) search against the FAISS index to retrieve the most semantically relevant chunks.
-3. **Agentic Layer:** The core reasoning engine. It dynamically routes queries:
-   * *Conceptual Query* $\rightarrow$ Triggers `SearchTool` $\rightarrow$ Synthesizes retrieved context.
-   * *Calculation Query* $\rightarrow$ Triggers `MathTool` $\rightarrow$ Computes symbolic solution $\rightarrow$ Returns exact roots/values.
+3. **Agentic Layer:** The core routing layer dynamically chooses between:
+   * *Conceptual Query* → `SearchTool` → retrieved context → grounded response.
+   * *Calculation Query* → `MathTool` → symbolic computation → returned roots/values when supported.
 
 ## 💻 Installation & Setup
 
@@ -41,47 +41,43 @@ The agent operates across three specialized layers:
    ```bash
    git clone https://github.com/MeghnaB12/physics-research-agent.git
    cd physics-research-agent
-    ```
+   ```
 2. **Install Dependencies**
    ```bash
-    pip install -r requirements.txt
-    ```
+   pip install -r requirements.txt
+   ```
 3. **Set up Environment Variables**
 
-    Create a .env file in the root directory and add your Google Gemini API key:
+   Create a `.env` file in the root directory and add your Google Gemini API key:
 
-    ```bash
-    GOOGLE_API_KEY=your_actual_api_key_here
-    ```
+   ```bash
+   GOOGLE_API_KEY=your_actual_api_key_here
+   ```
 
 ## 🏃‍♂️ How to Run
 
 1. **Ingest Data (Build the Knowledge Base)**
-   
-    Processes the raw PDF, cleans the text, and chunks it with rich metadata.
 
-    ```bash
-    python backend/app/main.py
-    ```
+   ```bash
+   python backend/app/main.py
+   ```
 
 2. **Build the Vector Index**
-   
-    Embeds the chunks and constructs the FAISS index for high-speed retrieval.
 
-    ```bash
-    python backend/app/retrieval/build_index.py
-    ```
+   ```bash
+   python backend/app/retrieval/build_index.py
+   ```
+
 3. **Launch the Application**
-   
-    Starts the interactive Streamlit chat interface.
-  
-    ```bash
-    streamlit run frontend/app.py
-    ```
+
+   ```bash
+   streamlit run frontend/app.py
+   ```
 
 ## 🧪 Testing
-  The system includes a robust test suite covering the ingestion logic, vector retrieval, and tool execution.
 
-  ```bash
-  pytest backend/tests
-  ```
+The test suite covers ingestion logic, vector retrieval, and tool execution.
+
+```bash
+pytest backend/tests
+```
